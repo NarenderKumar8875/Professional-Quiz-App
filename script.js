@@ -464,6 +464,7 @@ speakerLogo.addEventListener('click', () => {
 
 
 // Restart app------------------------------------------------>
+
 const restartBtn = document.querySelector('#restart');
 
 restartBtn.addEventListener('click', () => {
@@ -471,7 +472,17 @@ restartBtn.addEventListener('click', () => {
     timerCountValue = 30;
     score = 0;
     index = 0;
+
+    // innerLayer update
+
+    showResulr.innerHTML = `${score}/${questions.length - 31}`
+    
+    // outerLayer updater progress bar updater--------------------------------------------->
+
+    outerLayer.classList.remove('r1','r2','r3','r4','r5','r6','r7','r8','r9','r10')
+
     // question counter code-------------------->
+
     questionCounter.innerHTML = `${index + 1}/${questions.length - 31}`
     container.classList.remove('home');
     questionContainer.classList.add('home')

@@ -9,7 +9,7 @@
 
 body {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 
@@ -341,6 +341,9 @@ li {
 
 }
 
+.r0{
+    background: conic-gradient(green 0deg, tomato 0deg);
+}
 .r1 {
     background: conic-gradient(green 36deg, tomato 0deg);
 }
