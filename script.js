@@ -388,6 +388,7 @@ optionsArea.addEventListener('click', (e) => {
 
     if (e.target.tagName === 'LI') {
 
+        clearInterval(clearTimer);
 
         if (e.target.innerText === correct) {
             score++
