@@ -224,6 +224,8 @@ const questions = [
 
 let index = 0;
 let score = 0;
+let wrongQuestionCounter = 0;
+let RightQuestionCounter = 0;
 let clearTimer;
 let timerCountValue = 30;
 
@@ -384,6 +386,7 @@ optionsArea.addEventListener('click', (e) => {
 
         if (e.target.innerText === correct) {
             score++
+            RightQuestionCounter++
             rightAudio.play()
             e.target.classList.add('right')
             optionsArea.style.pointerEvents = "none";
@@ -391,6 +394,7 @@ optionsArea.addEventListener('click', (e) => {
             wrongAudio.play()
             e.target.classList.add('wrong')
             optionsArea.style.pointerEvents = "none";
+            wrongQuestionCounter++
         }
 
         if (e.target.className === 'wrong') {
@@ -410,8 +414,8 @@ optionsArea.addEventListener('click', (e) => {
     }
 
     // outerLayer updater progress bar updater--------------------------------------------->
-    
-    outerLayer.style.background = `conic-gradient(green ${score*36}deg, tomato 0deg)`;
+
+    outerLayer.style.background = `conic-gradient(green ${score * 36}deg, tomato 0deg)`;
 
     // comment low marks------------------------------------------------------->
     score < 4 ? comment.innerText = `very Bad...` : '';
@@ -421,10 +425,21 @@ optionsArea.addEventListener('click', (e) => {
 
     showResulr.innerHTML = `${score}/${questions.length - 31}`
 
+    //missed quesion and wrong question on rsult page------------>
+
+    const rightgQuestion = document.querySelector('.right-question p')
+    const wrongQuestion = document.querySelector('.wrong-question p')
+    const missedQuestion = document.querySelector('.missed-question p')
+
+    rightgQuestion.innerHTML = `Correct Que- ${RightQuestionCounter}`;
+    wrongQuestion.innerHTML = `Wrong Que- ${wrongQuestionCounter}`;
+
+    let missedQuestionCounter = 10 - (wrongQuestionCounter + RightQuestionCounter);
+    missedQuestion.innerHTML = `Missed Que- ${missedQuestionCounter}`;
+
     // showScore on home page---------------------------------------------->
     homeScore.innerText = `Your Score Is- ${score}`
     saveData()
-
 })
 
 // sound mute and unmute------------------------------------>
@@ -449,10 +464,13 @@ speakerLogo.addEventListener('click', () => {
 const restartBtn = document.querySelector('#restart');
 
 restartBtn.addEventListener('click', () => {
+
     clearInterval(clearTimer)
     timerCountValue = 30;
     score = 0;
     index = 0;
+    wrongQuestionCounter = 0;
+    RightQuestionCounter = 0;
 
     // innerLayer update
 
@@ -460,7 +478,7 @@ restartBtn.addEventListener('click', () => {
 
     // outerLayer updater progress bar updater--------------------------------------------->
 
-    outerLayer.classList.remove('r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10')
+    outerLayer.style.background = `conic-gradient(green ${score * 36}deg, tomato 0deg)`;
 
     // question counter code-------------------->
 

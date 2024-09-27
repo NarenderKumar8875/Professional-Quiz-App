@@ -282,7 +282,7 @@ li {
 }
 
 .result-logo img {
-    width: 25rem;
+    width: 23rem;
 }
 
 .result-graf {
@@ -322,15 +322,15 @@ li {
 .result-number {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 5rem;
+    align-items: end;
+    height: 3rem;
 }
 
 .comment {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 3rem;
+    align-items: end;
+    height: 1.5rem;
 }
 
 @media (max-width:500px) {
@@ -340,6 +340,7 @@ li {
 }
 
 .restart-btn {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -360,3 +361,10 @@ li {
 #restart:hover {
     box-shadow: 4px 7px 18px 2px gray;
 }
+
+.missed-question, .wrong-question,.right-question{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
