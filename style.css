@@ -10,6 +10,7 @@
 body {
     width: 100%;
     height: 100vh;
+    position: relative;
 }
 
 
@@ -48,7 +49,6 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 3rem;
-    /* background-color: aquamarine; */
 }
 
 .main #btn {
@@ -61,7 +61,8 @@ body {
     cursor: pointer;
     transition: 300ms;
 }
-#btn:hover{
+
+#btn:hover {
     box-shadow: 4px 7px 18px 2px gray;
 }
 
@@ -69,7 +70,7 @@ body {
     .main img {
         width: 20rem;
     }
-    
+
 
     .main #btn {
         font-size: 15px;
@@ -103,7 +104,7 @@ body {
     display: none;
 }
 
-.home-score{
+.home-score {
     display: flex;
     justify-content: center;
     /* background-color: #35bd3a; */
@@ -111,10 +112,7 @@ body {
     height: 3rem;
 }
 
-
 /* Question page css---------------------------------------> */
-
-
 
 .question-container {
     background-color: #CCE2C2;
@@ -122,7 +120,6 @@ body {
     height: 100vh;
     transition: 300ms;
     padding: 0 13rem;
-    position: relative;
 }
 
 .question-logo {
@@ -203,7 +200,7 @@ body {
     flex-direction: column;
     width: 100%;
     padding: 1rem;
-    
+
 }
 
 
@@ -234,7 +231,6 @@ li {
     font-weight: 600;
     font-size: 25px;
 }
-
 
 @media (max-width:865px) {
     .question-container {
@@ -275,9 +271,6 @@ li {
 .fa-circle-xmark {
     color: #e9e3e3;
 }
-
-
-
 
 /* result page CSS */
 
@@ -338,52 +331,7 @@ li {
     justify-content: center;
     align-items: center;
     height: 3rem;
-
 }
-
-.r0{
-    background: conic-gradient(green 0deg, tomato 0deg);
-}
-.r1 {
-    background: conic-gradient(green 36deg, tomato 0deg);
-}
-
-.r2 {
-    background: conic-gradient(green 72deg, tomato 0deg);
-}
-
-.r3 {
-    background: conic-gradient(green 108deg, tomato 0deg);
-}
-
-.r4 {
-    background: conic-gradient(green 144deg, tomato 0deg);
-}
-
-.r5 {
-    background: conic-gradient(green 180deg, tomato 0deg);
-}
-
-.r6 {
-    background: conic-gradient(green 216deg, tomato 0deg);
-}
-
-.r7 {
-    background: conic-gradient(green 252deg, tomato 0deg);
-}
-
-.r8 {
-    background: conic-gradient(green 288deg, tomato 0deg);
-}
-
-.r9 {
-    background: conic-gradient(green 324deg, tomato 0deg);
-}
-
-.r10 {
-    background: conic-gradient(green 360deg, tomato 0deg);
-}
-
 
 @media (max-width:500px) {
     .result-logo img {
@@ -391,13 +339,13 @@ li {
     }
 }
 
-.restart-btn{
+.restart-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#restart{
+#restart {
     font-weight: 600;
     font-size: 19px;
     padding: 8px 10px;
@@ -409,6 +357,6 @@ li {
     transition: 300ms;
 }
 
-#restart:hover{
+#restart:hover {
     box-shadow: 4px 7px 18px 2px gray;
 }

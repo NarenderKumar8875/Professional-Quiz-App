@@ -4,14 +4,11 @@ const StartNow = document.querySelector('#btn');
 const container = document.querySelector('.container');
 const questionContainer = document.querySelector('.question-container');
 
-
-
 StartNow.addEventListener('click', () => {
     container.classList.add('home')
     questionContainer.classList.remove('home')
     timerCount()
 })
-
 
 // Add Some Questions---------------------------------->
 const questions = [
@@ -225,7 +222,6 @@ const questions = [
 
 ];
 
-
 let index = 0;
 let score = 0;
 let clearTimer;
@@ -261,7 +257,6 @@ questions[index].answers.forEach((ans, i) => {
     li.append(ans)
 })
 optionsArea.append(ul)
-
 
 // Next Question And options Code-------------------------------------->
 
@@ -378,9 +373,6 @@ function timerCount() {
     }, 1000);
 }
 
-
-
-
 // answe cheking listner--------------------------->
 optionsArea.addEventListener('click', (e) => {
 
@@ -418,16 +410,8 @@ optionsArea.addEventListener('click', (e) => {
     }
 
     // outerLayer updater progress bar updater--------------------------------------------->
-    score === 1 ? outerLayer.classList.add('r1') : '';
-    score === 2 ? outerLayer.classList.add('r2') : '';
-    score === 3 ? outerLayer.classList.add('r3') : '';
-    score === 4 ? outerLayer.classList.add('r4') : '';
-    score === 5 ? outerLayer.classList.add('r5') : '';
-    score === 6 ? outerLayer.classList.add('r6') : '';
-    score === 7 ? outerLayer.classList.add('r7') : '';
-    score === 8 ? outerLayer.classList.add('r8') : '';
-    score === 9 ? outerLayer.classList.add('r9') : '';
-    score === 10 ? outerLayer.classList.add('r10') : '';
+    
+    outerLayer.style.background = `conic-gradient(green ${score*36}deg, tomato 0deg)`;
 
     // comment low marks------------------------------------------------------->
     score < 4 ? comment.innerText = `very Bad...` : '';
@@ -442,8 +426,6 @@ optionsArea.addEventListener('click', (e) => {
     saveData()
 
 })
-
-
 
 // sound mute and unmute------------------------------------>
 
@@ -462,7 +444,6 @@ speakerLogo.addEventListener('click', () => {
     }
 })
 
-
 // Restart app------------------------------------------------>
 
 const restartBtn = document.querySelector('#restart');
@@ -476,10 +457,10 @@ restartBtn.addEventListener('click', () => {
     // innerLayer update
 
     showResulr.innerHTML = `${score}/${questions.length - 31}`
-    
+
     // outerLayer updater progress bar updater--------------------------------------------->
 
-    outerLayer.classList.remove('r1','r2','r3','r4','r5','r6','r7','r8','r9','r10')
+    outerLayer.classList.remove('r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10')
 
     // question counter code-------------------->
 
@@ -488,7 +469,6 @@ restartBtn.addEventListener('click', () => {
     questionContainer.classList.add('home')
     resultPage.classList.add('home')
 })
-
 
 //  local storage save data--------------------------------->
 
